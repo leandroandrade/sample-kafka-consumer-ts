@@ -1,6 +1,6 @@
 import { processData } from './client';
 
-export const listening = ({env, consumer}: any) => {
+export const listening = ({ env, consumer }: any) => {
     consumer
         .run({
             ...env.listenerConfig,
@@ -9,5 +9,5 @@ export const listening = ({env, consumer}: any) => {
         .then(() => {
             console.log('Consumer ready and listening...');
         })
-        .catch(err => console.error('Consumer error:', err));
+        .catch((err) => console.error('Consumer error:', err));
 };

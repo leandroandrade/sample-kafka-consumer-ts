@@ -18,4 +18,4 @@ export default {
         fromBeginning: boolean(process.env.READ_FROM_BEGINNING),
     },
     listenerConfig: {},
-}
+};
