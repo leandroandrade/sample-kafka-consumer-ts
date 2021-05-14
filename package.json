@@ -1,0 +1,33 @@
+{
+  "name": "sample-kafka-consumer-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/server.js",
+    "dev": "nodemon --exec ts-node src/server.ts",
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig-build.json",
+    "test": "NODE_ENV=test jest --no-cache --silent",
+    "test:coverage": "NODE_ENV=test jest --runInBand --no-cache --coverage --silent",
+    "test:watch": "NODE_ENV=test jest --no-cache --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/kafkajs": "^1.9.0",
+    "@types/node": "^15.0.3",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.5.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "kafkajs": "^1.15.0"
+  }
+}
