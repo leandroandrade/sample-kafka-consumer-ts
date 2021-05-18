@@ -1,6 +1,6 @@
 import {
     boolean, number, string, array,
-} from '../../../src/configurations/env/helper';
+} from '../../src/env/helper';
 
 describe('helper-env-tests', () => {
     test('boolean', () => {

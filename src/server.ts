@@ -1,4 +1,4 @@
-import env from './configurations/env';
+import env from './env';
 import { KafkaHelper } from './configurations/kafka';
 
 Promise.all([KafkaHelper.connect(env)])

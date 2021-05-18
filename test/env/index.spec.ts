@@ -1,4 +1,4 @@
-import env from '../../../src/configurations/env';
+import env from '../../src/env';
 
 describe('env-tests', () => {
     test('should return environments variables', () => {
