@@ -6,8 +6,6 @@ export const listening = ({ env, consumer }: any) => {
             ...env.listenerConfig,
             eachMessage: processData,
         })
-        .then(() => {
-            console.log('Consumer ready and listening...');
-        })
+        .then(() => console.log('Consumer ready and listening...'))
         .catch((err) => console.error('Consumer error:', err));
 };
