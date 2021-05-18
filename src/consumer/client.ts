@@ -2,7 +2,7 @@ export class ConsumerClient {
     constructor() {
     }
 
-    processData({ topic, partition, message }: any): void {
+    async handler({ topic, partition, message }: any): Promise<void> {
         console.log({ message: message.value.toString() });
     }
 }

@@ -1,7 +1,8 @@
-import * as client from '../../src/consumer/client';
+import { ConsumerClient } from '../../src/consumer/client';
 
 describe('client-consumer-tests', () => {
     test('should run processData', async () => {
+        const client: ConsumerClient = new ConsumerClient();
         const params = {
             topic: 'simple-topic',
             partition: 0,
@@ -9,6 +10,6 @@ describe('client-consumer-tests', () => {
                 value: 'hello consumer',
             },
         };
-        await client.processData(params);
+        await client.handler(params);
     });
 });

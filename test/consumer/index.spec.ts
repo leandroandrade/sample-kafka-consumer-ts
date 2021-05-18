@@ -1,8 +1,9 @@
 import * as consumer from '../../src/consumer';
-import * as client from '../../src/consumer/client';
+import { ConsumerClient } from '../../src/consumer/client';
 
 describe('consumer-tests', () => {
     test('should run consumer without listenerConfig', async () => {
+        const client: ConsumerClient = new ConsumerClient();
         const env = { listenerConfig: {} };
         const params = {
             run: jest.fn().mockResolvedValue({}),
@@ -12,11 +13,12 @@ describe('consumer-tests', () => {
         expect(params.run).toHaveBeenCalled();
         expect(params.run).toHaveBeenCalledWith({
             ...env.listenerConfig,
-            eachMessage: client.processData,
+            eachMessage: client.handler,
         });
     });
 
     test('should run consumer with listenerConfig', async () => {
+        const client: ConsumerClient = new ConsumerClient();
         const env = {
             listenerConfig: {
                 autoCommit: true,
@@ -34,7 +36,7 @@ describe('consumer-tests', () => {
         expect(params.run).toHaveBeenCalled();
         expect(params.run).toHaveBeenCalledWith({
             ...env.listenerConfig,
-            eachMessage: client.processData,
+            eachMessage: client.handler,
         });
     });
 });
