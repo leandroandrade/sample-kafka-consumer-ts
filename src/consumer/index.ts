@@ -1,9 +1,11 @@
-import { processData } from './client';
+import { ConsumerClient } from './client';
 
 export const listening = ({ env, consumer }: any) => {
+    const client: ConsumerClient = new ConsumerClient();
+
     const configurations = {
         ...env.listenerConfig,
-        eachMessage: processData,
+        eachMessage: client.processData,
     };
 
     consumer
