@@ -6,7 +6,7 @@ const handle = (signal: string, consumer: Consumer) => {
         .then(() => {
             console.log('Consumer disconnected successful!');
             process.exit(0);
-        });
+        }).catch((err) => console.error(err));
 };
 
 export const exit = (consumer: Consumer): void => {
