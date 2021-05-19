@@ -1,7 +1,7 @@
 import { Consumer } from 'kafkajs';
 import { Client } from './client';
 
-export class ConsumerKafka {
+export class ConsumerService {
     constructor(
         private readonly consumer: Consumer,
         private readonly listenerConfig: Record<string, any>,

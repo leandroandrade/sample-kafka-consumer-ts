@@ -1,8 +1,8 @@
 import env from '../../env';
 import { ConsumerHelper } from '../../configurations/consumer';
-import { ConsumerKafka } from '../../services/consumer';
+import { ConsumerService } from '../../services/consumer';
 
 const consumer = ConsumerHelper.consumer();
-const client: ConsumerKafka = new ConsumerKafka(consumer, env.listenerConfig);
+const client: ConsumerService = new ConsumerService(consumer, env.listenerConfig);
 
 export default client;
