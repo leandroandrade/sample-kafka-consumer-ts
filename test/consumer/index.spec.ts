@@ -1,9 +1,9 @@
 import * as consumer from '../../src/services/consumer';
-import { Client } from '../../src/services/consumer/client';
+import { Handler } from '../../src/services/consumer/handler';
 
 describe('consumer-tests', () => {
     test('should run consumer without listenerConfig', async () => {
-        const client: Client = new Client();
+        const client: Handler = new Handler();
         const env = { listenerConfig: {} };
         const params = {
             run: jest.fn().mockResolvedValue({}),
@@ -18,7 +18,7 @@ describe('consumer-tests', () => {
     });
 
     test('should run consumer with listenerConfig', async () => {
-        const client: Client = new Client();
+        const client: Handler = new Handler();
         const env = {
             listenerConfig: {
                 autoCommit: true,

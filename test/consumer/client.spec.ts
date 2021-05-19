@@ -1,8 +1,8 @@
-import { Client } from '../../src/services/consumer/client';
+import { Handler } from '../../src/services/consumer/handler';
 
 describe('client-consumer-tests', () => {
     test('should run processData', async () => {
-        const client: Client = new Client();
+        const client: Handler = new Handler();
         const params = {
             topic: 'simple-topic',
             partition: 0,
