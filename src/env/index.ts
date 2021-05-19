@@ -6,6 +6,7 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 export default {
+    port: process.env.PORT,
     kafkaConfig: {
         clientId: process.env.CLIENT_ID,
         brokers: array(process.env.BROKERS),
