@@ -1,4 +1,4 @@
-export class ConsumerClient {
+export class Client {
     constructor() {
     }
 

@@ -1,8 +1,8 @@
-import { ConsumerClient } from '../../src/consumer/consumer-client';
+import { Client } from '../../src/consumer/client';
 
 describe('client-consumer-tests', () => {
     test('should run processData', async () => {
-        const client: ConsumerClient = new ConsumerClient();
+        const client: Client = new Client();
         const params = {
             topic: 'simple-topic',
             partition: 0,

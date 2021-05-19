@@ -1,5 +1,5 @@
 import { Consumer } from 'kafkajs';
-import { ConsumerClient } from './consumer-client';
+import { Client } from './client';
 
 export class ConsumerKafka {
     constructor(
@@ -8,7 +8,7 @@ export class ConsumerKafka {
     ) {}
 
     async listen(): Promise<void> {
-        const client: ConsumerClient = new ConsumerClient();
+        const client: Client = new Client();
 
         const configurations = {
             ...this.listenerConfig,
