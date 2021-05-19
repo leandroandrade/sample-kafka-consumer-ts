@@ -1,13 +1,20 @@
-import { ConsumerClient } from './client';
+import { Consumer } from 'kafkajs';
+import { ConsumerClient } from './consumer-client';
 
-export const listening = ({ env, consumer }: any) => {
-    const client: ConsumerClient = new ConsumerClient();
-    const configurations = {
-        ...env.listenerConfig,
-        eachMessage: client.handler,
-    };
-    consumer
-        .run(configurations)
-        .then(() => console.log('Consumer ready and listening...'))
-        .catch((err) => console.error('Consumer error:', err));
-};
+export class ConsumerKafka {
+    constructor(
+        private readonly consumer: Consumer,
+        private readonly listenerConfig: Record<string, any>,
+    ) {
+    }
+
+    async listen(): Promise<void> {
+        const client: ConsumerClient = new ConsumerClient();
+
+        const configurations = {
+            ...this.listenerConfig,
+            eachMessage: client.handler,
+        };
+        return this.consumer.run(configurations);
+    }
+}

@@ -1,13 +1,11 @@
-import { Consumer } from 'kafkajs';
-import { listening } from '../../consumer';
+import express from 'express';
+import 'express-async-errors';
+import setUp from '../setup';
+import setRoutes from '../routes';
 
-namespace App {
-    export type Params = {
-        env: Record<string, any>;
-        consumer: Consumer
-    }
-}
+const app = express();
 
-export default ({ env, consumer }: App.Params) => {
-    listening({ env, consumer });
-};
+setUp(app);
+setRoutes(app);
+
+export default app;

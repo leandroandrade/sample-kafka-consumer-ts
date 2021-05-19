@@ -1,5 +1,5 @@
 import * as consumer from '../../src/consumer';
-import { ConsumerClient } from '../../src/consumer/client';
+import { ConsumerClient } from '../../src/consumer/consumer-client';
 
 describe('consumer-tests', () => {
     test('should run consumer without listenerConfig', async () => {

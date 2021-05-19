@@ -1,4 +1,4 @@
-import { ConsumerClient } from '../../src/consumer/client';
+import { ConsumerClient } from '../../src/consumer/consumer-client';
 
 describe('client-consumer-tests', () => {
     test('should run processData', async () => {
